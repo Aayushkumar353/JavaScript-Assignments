@@ -16,20 +16,19 @@
   - The function should handle empty strings gracefully.
 
   Once you've implemented the logic, test your code by running
-  - `npm run test-countChar`
+  - ``
 */
 
 const countCharacters = (statement) => {
-  let result = {};
-  for (let i = 0; i < statement.length; i++) {
-    let char = statement.charAt(i);
-    if (result[char]) {
-      result[char]++;
-    } else {
-      result[char] = 1;
-    }
+  let count = {};
+    for (let char of statement){
+      if (count[char]){
+        count[char]++
+      } else {
+        count[char] = 1;
+      }
   }
-   return result
+   return count
 };
 module.exports = countCharacters;
 
