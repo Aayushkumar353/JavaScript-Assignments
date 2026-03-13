@@ -16,7 +16,22 @@
 */
 
 function getPrimesUpTo100() {
-  // Your code here
+  let primeNo =[];
+  function isPrime(num){
+    if(num < 2) return false;
+    for (let j = 2; j<num; j++){
+      if (num%j ===0){
+        return false;
+      }
+    }
+    return true;
+  }
+  for (let i = 2 ; i<=100; i++){
+    if (isPrime(i)){
+      primeNo.push(i);
+    }
+  }
+  return primeNo;
 }
 
 module.exports = { getPrimesUpTo100 };
