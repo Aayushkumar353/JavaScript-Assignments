@@ -16,12 +16,27 @@
 
   Note:
   - The function should work for any alphanumeric string.
-
   Once you've implemented the logic, test your code by running
   - `npm run test-compressString`
 */
 function compression(str) {
-  // Your code here
-}
+  if (str === "") return "";
+  let count = 1;
+  let result = "";
+  for (let i = 1;i<= str.length; i++){
+    if (str[i]===str[i-1]){
+      count++;
+    }else{
+      result += str[i-1];
+      if (count >1){
+        result += count;
+      }
+      count = 1;
+    }
+  }
+  return result;
+  }
+
+
 
 module.exports = compression;
