@@ -23,8 +23,29 @@
 
 
 function compressWords(arr) {
-  // Your code here
+  if (arr.length === 0) return [];
+
+  let newArr = [];
+  let count = 1;
+
+  for (let i = 1; i <= arr.length; i++) {
+    if (arr[i] === arr[i - 1]) {
+      count++;
+    } else {
+      let word = arr[i - 1];
+
+      if (count > 1) {
+        word += count;
+      }
+
+      newArr.push(word);
+      count = 1;
+    }
+  }
+
+  return newArr;
 }
+
 
 
 module.exports = compressWords;
